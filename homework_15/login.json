@@ -1,0 +1,11 @@
+{"login":
+    {"description":"This is a sample login to Petstore server",
+    "name":"harry_potter", "password":"DieTomRedlle!D1e",
+    "termsOfService":"http://hogwards.io/terms/",
+    "contact":{"email":"info@hogwards.io"},
+    "license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"}
+    }
+2026-04-16 21:06:13,434 - __main__ - ERROR - This is an error message
+2026-04-16 21:14:27,349 - __main__ - ERROR - This is an error message
+2026-04-16 21:16:20,966 - __main__ - ERROR - This is an error message
+2026-04-16 21:17:01,085 - __main__ - ERROR - This is an error message

@@ -1,0 +1,22 @@
+2026-04-20 14:14:17,242 - xml_login - INFO - Number: 0
+2026-04-20 14:14:17,242 - xml_login - INFO - Incoming timing: 0xQUIN
+2026-04-20 14:14:17,242 - xml_login - INFO - Number: 1
+2026-04-20 14:14:17,242 - xml_login - INFO - timingExbytes: not found
+2026-04-20 14:14:17,242 - xml_login - INFO - Number: 2
+2026-04-20 14:14:17,242 - xml_login - INFO - Incoming timing: 0xACDC
+2026-04-20 14:14:17,242 - xml_login - INFO - Number: 4
+2026-04-20 14:14:17,242 - xml_login - INFO - Incoming timing: 0x2000
+2026-04-20 14:14:17,242 - xml_login - INFO - Number: 5
+2026-04-20 14:14:17,242 - xml_login - INFO - Incoming timing: 0x6666
+2026-04-20 14:14:17,242 - xml_login - INFO - Search completed
+2026-04-20 14:14:39,939 - xml_login - INFO - Number: 0
+2026-04-20 14:14:39,977 - xml_login - INFO - Incoming timing: 0xQUIN
+2026-04-20 14:14:39,977 - xml_login - INFO - Number: 1
+2026-04-20 14:14:39,978 - xml_login - INFO - timingExbytes: not found
+2026-04-20 14:14:39,978 - xml_login - INFO - Number: 2
+2026-04-20 14:14:39,978 - xml_login - INFO - Incoming timing: 0xACDC
+2026-04-20 14:14:39,978 - xml_login - INFO - Number: 4
+2026-04-20 14:14:39,978 - xml_login - INFO - Incoming timing: 0x2000
+2026-04-20 14:14:39,978 - xml_login - INFO - Number: 5
+2026-04-20 14:14:39,978 - xml_login - INFO - Incoming timing: 0x6666
+2026-04-20 14:14:39,978 - xml_login - INFO - Search completed

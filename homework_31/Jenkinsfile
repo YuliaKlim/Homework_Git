@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    python3 -m venv venv
+                    ./venv/bin/pip install --upgrade pip
+                    ./venv/bin/pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh './venv/bin/pytest --junitxml=results.xml || true'
+            }
+        }
+
+        stage('Publish Results') {
+            steps {
+                junit 'results.xml'
+            }
+        }
+    }
+
+    post {
+        always {
+            mail to: 'InsertYour@Mail.Here',
+                 subject: "Jenkins Build Report: ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
+                 body: """Dear Teacher,
+
+Automated testing of your Python project is complete.
+
+Build status: ${currentBuild.currentResult}
+Build number: ${env.BUILD_NUMBER}
+Link to results: ${env.BUILD_URL}"""
+        }
+    }
+}

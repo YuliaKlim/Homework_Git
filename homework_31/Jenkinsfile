@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                dir('homework_31') {
+                    sh '''
+                        python3 -m pip install --upgrade pip --break-system-packages
+                        python3 -m pip install -r requirements.txt --break-system-packages
+                    '''
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                dir('homework_31') {
+                    sh 'python3 -m pytest --junitxml=results.xml || true'
+                }
+            }
+        }
+
+        stage('Publish Results') {
+            steps {
+                dir('homework_31') {
+                    junit 'results.xml'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            mail to: 'klyuliaklgmail.com',
+                 subject: "Jenkins Build Report: ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
+                 body: """Dear Teacher,
+Automated testing of your Python project is complete..
+
+Build status: ${currentBuild.currentResult}
+Build number: ${env.BUILD_NUMBER}
+Build URL: ${env.BUILD_URL}"""
+        }
+    }
+}
